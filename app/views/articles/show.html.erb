@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<div class="col-sm-11 col-xs-12 blog-content">
+  <h2 class="text-center"><%= @article.title %></h2>
+  <h5 class="text-center"><%= @article.created_at.strftime('%b %d, %Y') %></h5>
+  <div><%= raw @article.body %></div>
+</div>
+
+<p>
+  <strong>User:</strong>
+  <%= @article.user.name %>
+</p>
+<% if not current_user.favorited? @article %>
+  <%= link_to "Favorite", article_path(@article), class: "btn btn-primary" %>
+<% end %>
+<%=  @article.favoritors_count %>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

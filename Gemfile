@@ -33,6 +33,26 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Additional Gems
+# Devise for Authentication
+gem 'devise'
+# CanCanCan for Authorization
+gem 'cancancan', '~> 2.0'
+# acts_as_favourites for Favorite functionalities
+gem 'acts_as_favoritor'
+# acts_as_follower for folow functionalities
+##gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+# simple_form & bootstrap-sass for style and input
+gem 'jquery-rails'
+gem 'simple_form', '~> 3.2'
+gem 'bootstrap-sass', '~> 3.3'
+gem 'ckeditor', '~> 4.1'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
