@@ -5,9 +5,9 @@
 </div>
 
 
-<% if current_user %>
- <%# link_to "Follow", favor_path(@article), remote: true, class: "myfav btn btn-primary #{'hide' if @favorited}" %>
- <%# link_to "Un-Follow", unfavor_path(@article), remote: true, class: "unfav btn btn-danger #{'hide' unless @favorited}" %>
+<% if current_user and current_user != @user %>
+ <%= link_to "Follow", follow_path(@user), remote: true, class: "myfoll btn btn-primary #{'hide' if @following}" %>
+ <%= link_to "Un-Follow", unfollow_path(@user), remote: true, class: "unfoll btn btn-danger #{'hide' unless @following}" %>
 <% end %>
 <hr />
 <div>

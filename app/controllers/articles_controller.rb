@@ -12,7 +12,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    @favorited = current_user.favorites.find_by(favoritable: @article)
+    if current_user
+      @favorited = current_user.favorites.find_by(favoritable: @article)
+    end
   end
 
   # GET /articles/new

@@ -1,0 +1,33 @@
+<p>
+  Total Number of Followings: <%= @followings_count %>
+</p>
+<div>
+  <h5 class="text-center"><%= current_user.name %>'s Followings</h5>
+  <table style="width:100%">
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Profile
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+     <% @followings.each do |following| %>
+          <tr>
+               <td><%= following.name %></td>
+               <td><%= following.email %></td>
+               <td>
+                 <%= link_to "Profile", show_user_path(following) %>
+               </td>
+          </tr>
+     <% end %>
+</tbody>
+  </table>
+</div>
+<%= link_to 'Back', root_path %>
