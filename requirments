@@ -1,0 +1,23 @@
+Create a Rails application with the following features.
+
+- User can signs up.
+- User can sign in.
+
+- User can create Articles.
+- User can list all Articles.
+- User can read an Article.
+- User can favorite/unfavorite Article.
+- User can list all his favorite Articles.
+User can follow/unfollow other users.
+User can list his followings.
+User can list Articles from his followings.
+
+
+Note:
+Listing Articles should display owner, title, content and favorites count.
+
+
+https://github.com/tcocca/acts_as_follower
+https://github.com/rajcybage/acts_as_favourites
+https://scotch.io/tutorials/build-a-blog-with-ruby-on-rails-part-2
+https://scotch.io/tutorials/build-a-blog-with-ruby-on-rails-part-1

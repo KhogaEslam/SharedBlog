@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<div>
+  <h2 class="text-center"><%= @user.name %></h2>
+  <h5 class="text-center"><%= @user.email %></h5>
+</div>
+
+
+<% if current_user %>
+ <%# link_to "Follow", favor_path(@article), remote: true, class: "myfav btn btn-primary #{'hide' if @favorited}" %>
+ <%# link_to "Un-Follow", unfavor_path(@article), remote: true, class: "unfav btn btn-danger #{'hide' unless @favorited}" %>
+<% end %>
+<hr />
+<div>
+  <h5 class="text-center"><%= @user.name %>'s Articles</h5>
+  <table style="width:100%">
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Intro
+        </th>
+        <th>
+          Read More...
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+     <% @articles.each do |article| %>
+          <tr>
+               <td><%= article.title %></td>
+               <td><%= raw(article.body).truncate(50) %></td>
+               <td>
+                 <%= link_to "READ MORE", article_path(article) %>
+               </td>
+          </tr>
+     <% end %>
+</tbody>
+  </table>
+</div>
+<%= link_to 'Back', root_path %>

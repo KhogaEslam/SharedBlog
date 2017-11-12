@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'favorites/favor/:id', to: 'favorites#favor', as: 'favor'
+  get 'favorites/unfavor/:id', to: 'favorites#unfavor', as: 'unfavor'
+  get 'favorites/my', to: 'favorites#my_favor', as: 'my_favor'
+
+  get 'users/show/:id', to: 'users#show', as: 'show_user'
+
   mount Ckeditor::Engine => '/ckeditor'
   root to: "articles#index"
   resources :articles

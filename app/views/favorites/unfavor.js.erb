@@ -1,0 +1,8 @@
+$('#fav_count').html(parseInt($('#fav_count').html(), 10)-1)
+$( ".myfav" ).removeClass('hide');
+$( ".unfav" ).addClass('hide');
+
+var id = "<%= "fav-#{@favorite.id}" %>";
+// $("."+id).parent().remove();
+
+$($("."+id).closest("tr")).remove()
