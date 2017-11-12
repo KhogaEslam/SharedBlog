@@ -12,8 +12,8 @@
       <div class="text-center">
         <%= link_to "READ MORE", article_path(article) %>
       </div>
-      <% if user_signed_in? %>
         <%= link_to "Show", article_path(article), class: "btn btn-primary" %>
+      <% if user_signed_in? and authorized?(article) %>
         <%= link_to "Edit", edit_article_path(article), class: "btn btn-default" %>
         <%= link_to "Delete", article_path(article), class: "btn btn-danger", data: {:confirm => "Are you sure?"}, method: :delete %>
       <% end %>

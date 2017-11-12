@@ -1,11 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.includes(:user)
   end
 
   # GET /articles/1
@@ -73,5 +74,11 @@ class ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :body)
+    end
+
+    def authorize_user
+      unless current_user == @article.user
+        redirect_to root_path
+      end
     end
 end

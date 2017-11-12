@@ -50,7 +50,7 @@ gem 'ckeditor', '~> 4.1'
 gem 'carrierwave'
 gem 'mini_magick'
 # gem 'bootstrap', '~> 4.0.0.beta2.1'
-
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
 
 group :development, :test do
