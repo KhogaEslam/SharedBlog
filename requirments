@@ -8,9 +8,9 @@ Create a Rails application with the following features.
 - User can read an Article.
 - User can favorite/unfavorite Article.
 - User can list all his favorite Articles.
-User can follow/unfollow other users.
-User can list his followings.
-User can list Articles from his followings.
+- User can follow/unfollow other users.
+- User can list his followings.
+- User can list Articles from his followings.
 
 
 Note:

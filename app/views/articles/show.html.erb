@@ -14,7 +14,7 @@
   <%= link_to "Un-Favorite", unfavor_path(@article), remote: true, class: "unfav btn btn-danger #{'hide' unless @favorited}" %>
 <% end %>
 <span id='fav_count'>
-  <%=  @article.favorited.count %>
+  Favorites Count: <%=  @article.favorited.count %>
 </span>
 <% if user_signed_in? and authorized?(@article) %>
 <%= link_to 'Edit', edit_article_path(@article) %> |
