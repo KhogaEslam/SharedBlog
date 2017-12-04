@@ -1,0 +1,12 @@
+<% provide(:title, 'All Authors') %>
+<h1>All Authors</h1>
+
+<%= will_paginate %>
+
+<ul class="authors">
+  <% cache @authors do %>
+    <%= render @authors %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

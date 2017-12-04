@@ -1,0 +1,39 @@
+<% provide(:title, @author.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="author_info">
+      <h1>
+        <%= gravatar_for @author %>
+        <%= @author.name %>
+      </h1>
+      <p>
+        <%= @author.email %>
+      </p>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+    <hr>
+    <section class="favorites">
+      <%= render 'shared/favorites' %>
+    </section>
+    <hr>
+    <section class="article_form">
+      <%= render 'shared/article_form' %>
+    </section>
+  </aside>
+
+  <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
+    <% if @author.articles.any? %>
+        <h3>My Articles (<%= @author.articles.count %>)</h3>
+        <ol class="articles">
+          <% cache @articles do %>
+            <%= render @articles %>
+          <% end %>
+        </ol>
+        <%= will_paginate @articles %>
+    <% end %>
+  </div>
+
+</div>

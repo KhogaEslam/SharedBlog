@@ -1,0 +1,9 @@
+<% unless current_publisher?(@article) %>
+    <div id="favorite_form">
+      <% if current_author.favoring?(@article) %>
+          <%= render 'unfavorite' %>
+      <% else %>
+          <%= render 'favorite' %>
+      <% end %>
+    </div>
+<% end %>

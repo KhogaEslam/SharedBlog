@@ -1,0 +1,32 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+khoga:
+  name: Khoga Eslam
+  email: egk@example.dad
+  password_digest: <%= Author.digest('password') %>
+  admin: true
+
+mrmr:
+  name: Maria Eslam
+  email: mrmr@example.kids
+  password_digest: <%= Author.digest('password') %>
+  admin: false
+
+maimona:
+  name: Maimona Ahmed
+  email: mai@example.mom
+  password_digest: <%= Author.digest('password') %>
+  admin: false
+
+bo2loz:
+  name: Bo2loz ElB2aliz
+  email: bo2loz@example.mom
+  password_digest: <%= Author.digest('password') %>
+  admin: false
+
+<% 30.times do |n| %>
+author_<%= n %>:
+  name:  <%= "Author #{n}" %>
+  email: <%= "author-#{n}@example.com" %>
+  password_digest: <%= Author.digest('password') %>
+  admin: false
+<% end %>

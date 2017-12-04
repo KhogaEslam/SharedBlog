@@ -1,0 +1,9 @@
+<% @author ||= current_author %>
+<div class="favorites">
+  <a href="<%= favorites_author_path(@author) %>">
+    <strong id="favorite" class="favo">
+      <%= @author.favorites.count %>
+    </strong>
+    Favorite Articles
+  </a>
+</div>

@@ -1,0 +1,20 @@
+<% cache article do %>
+    <div class="col-sm-6 col-md-4" id="article-<%= article.id %>">
+    <div class="thumbnail">
+      <%= image_tag article.default_picture? ? article.default_picture.url : article.default_image_url %>
+      <div class="caption">
+        <span class='author'><%= link_to article.author.name, article.author %></span>
+        <h4 class='title'><%= link_to article.title, article %></h4>
+        <p><%= raw(article.content.truncate(20)) %></p>
+        <span class='timestamp'>
+           <%= time_ago_in_words(article.created_at) %> ago.
+      </span>
+        <p>
+          <%= link_to 'Read More...',
+                      article,
+                      class: 'btn btn-primary' %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>

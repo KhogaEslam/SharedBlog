@@ -1,0 +1,27 @@
+<% cache article do %>
+<li id="article-<%= article.id %>">
+  <%= link_to gravatar_for(article.author, size: 50), article.author %>
+  <span class='author'><%= link_to article.author.name, article.author %></span>
+  <h4 class='title'><%= link_to article.title, article %></h4>
+  <span class='content'>
+    <%= image_tag article.default_picture? ? article.default_picture.url : article.default_image_url %>
+    <br>
+    <%= raw(article.content.truncate(50)) %>
+    <br>
+    <br>
+    <br>
+  </span>
+  <div>
+  <span class='timestamp'>
+    Published <%= time_ago_in_words(article.created_at) %> ago.
+  </span>
+  </div>
+  <br>
+  <div>
+    <span class='read_more'><%= link_to 'Read More...',
+                                        article,
+                                        class: 'btn btn-primary' %>
+    </span>
+  </div>
+</li>
+<% end %>

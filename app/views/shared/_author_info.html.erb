@@ -1,0 +1,4 @@
+<%= link_to gravatar_for(current_author, size: 50), current_author %>
+<h1><%= current_author.name %></h1>
+<span><%= link_to 'view my profile', current_author %></span>
+<span><%= pluralize(current_author.articles.count, 'article') %></span>

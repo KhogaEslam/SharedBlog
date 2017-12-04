@@ -1,0 +1,9 @@
+<% unless current_author?(@author) %>
+    <div id="follow_form">
+      <% if current_author.following?(@author) %>
+          <%= render 'unfollow' %>
+      <% else %>
+          <%= render 'follow' %>
+      <% end %>
+    </div>
+<% end %>

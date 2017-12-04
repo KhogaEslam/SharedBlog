@@ -1,0 +1,4 @@
+<%= form_for(current_author.favorite_articles.find_by(article_id: @article.id),
+             html: { method: :delete }, remote: true) do |f| %>
+    <%= f.submit 'Unfavorite', class: 'btn' %>
+<% end %>

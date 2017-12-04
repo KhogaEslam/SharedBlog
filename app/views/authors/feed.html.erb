@@ -1,0 +1,25 @@
+<% if logged_in? %>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="author_info">
+          <%= render 'shared/author_info' %>
+        </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+        <hr>
+        <section class="favorites">
+          <%= render 'shared/favorites' %>
+        </section>
+        <hr>
+        <section class="article_form">
+          <%= render 'shared/article_form' %>
+        </section>
+      </aside>
+
+      <div class="col-md-8">
+        <h3>Articles Feed</h3>
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+<% end %>

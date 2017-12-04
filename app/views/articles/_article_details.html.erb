@@ -1,0 +1,33 @@
+<% cache article do %>
+<li id="article-<%= article.id %>">
+  <h3><%= article.title %></h3>
+  <span class='content'>
+    <center>
+    <%= image_tag article.default_picture? ? article.default_picture.url : article.default_image_url %>
+    </center>
+      <br>
+    <br>
+    <br>
+    <%= raw(article.content) %>
+  </span>
+
+  <span class='timestamp'>
+    Published <%= time_ago_in_words(article.created_at) %> ago.
+  </span>
+  <br>
+  <div>
+    <% if current_author&.admin? || current_author?(article.author) %>
+      <span class='delete'>
+        <%= link_to 'Edit', edit_article_path(article),
+                    class: 'btn btn-default' %>
+
+        <%= link_to 'delete',
+                    article,
+                    class: 'btn btn-danger',
+                    method: :delete,
+                    data: { confirm: 'You sure?' } %>
+      </span>
+    <% end %>
+  </div>
+</li>
+<% end %>

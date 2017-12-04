@@ -1,0 +1,24 @@
+<% provide(:title, @article.title) %>
+<% cache @article do %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        Author:
+        <%= gravatar_for @article.author %>
+        <%= @article.author.name %>
+      </h1>
+    </section>
+    <hr>
+    <section class="stats">
+      <%= render 'shared/favorited' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= render 'favorite_form' if logged_in? %>
+    <ol class="articles">
+      <%= render 'article_details', :article => @article %>
+    </ol>
+  </div>
+</div>
+<% end %>

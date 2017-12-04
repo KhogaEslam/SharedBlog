@@ -1,0 +1,15 @@
+<% @author ||= current_author %>
+<div class="stats">
+  <a href="<%= following_author_path(@author) %>">
+    <strong id="following" class="stat">
+      <%= @author.following.count %>
+    </strong>
+    following
+  </a>
+  <a href="<%= followers_author_path(@author) %>">
+    <strong id="followers" class="stat">
+      <%= @author.followers.count %>
+    </strong>
+    followers
+  </a>
+</div>
